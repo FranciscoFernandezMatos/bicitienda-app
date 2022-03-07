@@ -1,3 +1,11 @@
+E-commerce. Tienda virtual online de venta de productos accesorios para el ciclismo.
+Proyecto Práctico Curso React CoderHouse Mar. 2022
+
+1 Entrega. 
+
+Default React App subida a repositorio GitHub
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
