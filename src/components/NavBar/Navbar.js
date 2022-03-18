@@ -1,33 +1,28 @@
 import React from 'react';
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavBarElements';
+import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, LogoContainer} from './NavBarElements';
 import { ReactComponent as Logo } from "../../images/bike.svg";
+import CartWidget from "../CartWidget/CartWidget"
+
 
 const Navbar = () => {
 return (
     <>
         <Nav>
-            <Logo /> 
+            <NavLink to="/">
+            <LogoContainer><Logo /></LogoContainer>
             <Bars />
+            </NavLink>    
             <NavMenu>
-                <NavLink to="/" >
-                    Home
-                </NavLink>
-                <NavLink to="/about" >
-                    Bici Tienda
-                </NavLink>
-                <NavLink to="/products" >
-                    Productos
-                </NavLink>
-                <NavLink to="/contact-us" >
-                    Contacto
-                </NavLink>
-                <NavLink to="/sign-up" >
-                    Suscríbete
-                </NavLink>
+                <NavLink to="/tienda">Tienda</NavLink>
+                <NavLink to="/vestimenta">Vestimenta</NavLink>
+                <NavLink to="/calzado">Calzado</NavLink>
+                <NavLink to="/seguridad">Seguridad</NavLink>
+                <NavLink to="/accesorios">Accesorios</NavLink>
+                <NavLink to="/outdoors">Outdoors</NavLink>
+                <NavLink to="/buscador">🔍️</NavLink>
+                <NavBtn><NavBtnLink to="/ingreso">Entrar</NavBtnLink></NavBtn>
+                <NavLink to="/carrito"><CartWidget/></NavLink>
             </NavMenu>
-            
-            <NavBtn><NavBtnLink to="/sign-in">Ingresa</NavBtnLink>
-            </NavBtn>
         </Nav>  
     </>
 );

@@ -4,11 +4,11 @@ import {FaBars} from 'react-icons/fa'
 
 export const Nav = styled.nav`
     background: #006C70;
-    height: 80px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem calc((100vw - 1000px)/2);
-    z-index: 10;
+    padding: 0 calc((100vw - 1200px)/2);
+    z-index: 1000;
 `;
 
 export const NavLink = styled(Link)`
@@ -22,6 +22,7 @@ export const NavLink = styled(Link)`
 
     &.active {
         color: #22BFBF;
+        transition: all 0.3s ease;
     }
 `;
 
@@ -34,8 +35,8 @@ export const Bars = styled(FaBars)`
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(-100%, 75%);
-        font-size: 1.8rem;
+        transform: translate(-50%, 50%);
+        font-size: 1.5rem;
         cursor: pointer;
     }
 `;
@@ -43,7 +44,7 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
-    margin-right: -24px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -62,20 +63,26 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(Link)`
-    border-radius: 4px;
+    border-radius: .5rem;
     background: #22BFBF;
-    padding: 10px 22px;
+    padding: .5rem;
     color: #E6F3FF;
     border: none;
     outline: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.33s ease-in-out;
     text-decoration: none;
+    z-index: 1000;
 
     &:hover {
-        transition: all 0.2s ease-in-out;
+        transition: all 0.33s ease-in-out;
         background: #FFD300;
         color: #006C70;
     }
 `;
+
+export const LogoContainer = styled.div`
+    display: flex;
+    width: 45%;
+`
 
