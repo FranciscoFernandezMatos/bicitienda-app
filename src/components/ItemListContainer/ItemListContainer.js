@@ -2,11 +2,11 @@ import React from 'react';
 import { CartContainer, CartWrap, Greetings } from './ItemListContainerElements';
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({greeting}) => {
     return (
         <CartContainer>
             <CartWrap>
-                <Greetings>{props.greetings}</Greetings>
+                <Greetings>{greeting}</Greetings>
             </CartWrap>
         </CartContainer>
     );
