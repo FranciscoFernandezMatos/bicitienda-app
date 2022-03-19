@@ -1,15 +1,13 @@
 import React from 'react';
-import { CartContainer, CartWrap, CartList, CartItem } from './ItemListContainerElements';
+import { CartContainer, CartWrap, Greetings } from './ItemListContainerElements';
 
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
     return (
         <CartContainer>
-                <CartWrap>
-                    <CartList>
-                        <CartItem></CartItem>
-                    </CartList>
-                </CartWrap>
+            <CartWrap>
+                <Greetings>{props.greetings}</Greetings>
+            </CartWrap>
         </CartContainer>
     );
 };

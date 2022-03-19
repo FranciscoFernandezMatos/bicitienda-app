@@ -19,7 +19,7 @@ function App() {
     <Router>
       <Topbar />
       <Navbar />
-      <ItemListContainer />
+      <ItemListContainer greetings="Hola, qué estás buscando hoy?"/>
       <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/tienda" component={Tienda} />

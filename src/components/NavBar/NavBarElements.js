@@ -83,6 +83,6 @@ export const NavBtnLink = styled(Link)`
 
 export const LogoContainer = styled.div`
     display: flex;
-    width: 45%;
+    width: 50px;
 `
 
