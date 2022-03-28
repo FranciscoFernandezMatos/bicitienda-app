@@ -18,6 +18,7 @@ export const NavLink = styled(Link)`
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    font-size: 1vw;
     cursor: pointer;
 
     &.active {
@@ -63,11 +64,11 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(Link)`
-    border-radius: .5rem;
+    border-radius: .1rem;
     background: #22BFBF;
-    padding: .5rem;
+    padding: .1rem;
     color: #E6F3FF;
-    border: none;
+    border: thin solid #E6F3FF;
     outline: none;
     cursor: pointer;
     transition: all 0.33s ease-in-out;
@@ -83,6 +84,6 @@ export const NavBtnLink = styled(Link)`
 
 export const LogoContainer = styled.div`
     display: flex;
-    width: 50px;
+    width: 3rem;;
 `
 

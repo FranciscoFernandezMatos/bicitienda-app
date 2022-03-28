@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/NavBar/Navbar';
 import Topbar from './components/Topbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Home from './pages';
 import Tienda from './pages/tienda';
 import Vestimenta from './pages/vestimenta';
@@ -12,14 +13,14 @@ import Accesorios from './pages/accesorios';
 import Outdoors from './pages/outdoors';
 import Buscador from './pages/buscador';
 import Carrito from './pages/carrito';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 
 function App() {
   return (
     <Router>
       <Topbar />
       <Navbar />
-      <ItemListContainer greeting="Hola, qué estás buscando hoy?"/>
+      <ItemListContainer greeting="En BiciTienda encuentra todo para tu próxima Aventura!"/>
       <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/tienda" component={Tienda} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, LogoContainer} from './NavBarElements';
 import { ReactComponent as Logo } from "../../images/bike.svg";
-import CartWidget from "../CartWidget/CartWidget"
+import CartWidget from "../CartWidget/CartWidget";
 
 
 const Navbar = () => {
