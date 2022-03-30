@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/NavBar/Navbar';
 import Topbar from './components/Topbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import Home from './pages';
 import Tienda from './pages/tienda';
 import Vestimenta from './pages/vestimenta';

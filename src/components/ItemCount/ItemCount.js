@@ -1,8 +1,7 @@
 import React , {useState} from 'react';
-import {ItemCountContainer, ItemCardContainer, ItemWrapper, Item, CounterContainer, ItemCounterMinor, UnitsOf, ItemCounterPlus, ItemAddCart} from './ItemCountElements';
+import {ItemCountContainer, ItemCardContainer, CounterContainer, ItemCounterMinor, UnitsOf, ItemCounterPlus, ItemAddCart} from './ItemCountElements';
 
-
-const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(initial);
 
@@ -21,9 +20,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <ItemCountContainer>
             <ItemCardContainer>
-                <ItemWrapper>
-                    <Item>Pedales Shimano XT</Item>
-                </ItemWrapper>
                 <CounterContainer>
                     <ItemCounterMinor onClick={handlerClickSubstract}/>
                     <UnitsOf>{contador}</UnitsOf>
@@ -34,5 +30,3 @@ const ItemCount = ({stock, initial, onAdd}) => {
         </ItemCountContainer>
     )
 };
-
-export default ItemCount;

@@ -5,11 +5,11 @@ import styled from 'styled-components';
 export const ItemCountContainer = styled.div`
     position: relative;
     display: flex;
-    top: 20vh;
+    top:0;
     margin: 0 auto;
     flex-direction: column;
     width : 20rem;
-    height: 14rem;
+    height: 150px;
     background: #006C7099;
     border: thin solid #006C70;
     border-radius: .1rem;
@@ -18,28 +18,17 @@ export const ItemCountContainer = styled.div`
 export const ItemCardContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 8rem;
+    height: 50px;
     margin: .3rem;
     background: #22BFBF;
     border-radius: .1rem;
 `;
 
-export const ItemWrapper = styled.div`
-    display: flex;
-    flex-grow: 1;
-    heigth: 5rem;
-    background: transparent;
-`;
-
-export const Item = styled.div`
-    margin: .3rem auto;
-    padding: .3rem;
-    color: #E6F3FF;
-`;
 export const CounterContainer = styled.div`
     display: flex;
+    z-index: 1000;
     justify-content: space-between;
-    height: 3rem;
+    height: 50px;
     background: linear-gradient(transparent, #E6F3FF);
     border-radius: .3rem;
 `;
