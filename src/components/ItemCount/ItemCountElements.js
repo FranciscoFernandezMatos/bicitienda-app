@@ -10,8 +10,8 @@ export const ItemCountContainer = styled.div`
     flex-direction: column;
     width : 20rem;
     height: 150px;
-    background: #006C7099;
-    border: thin solid #006C70;
+    background:#006C7099;
+    border: thin solid#006C70;
     border-radius: .1rem;
 `;
 
@@ -36,7 +36,7 @@ export const CounterContainer = styled.div`
 export const ItemCounterMinor = styled(TiMinus)`
         display: block;
         z-index: 500;
-        color:  #006C70;
+        color:#006C70;
         margin-left: 2rem;
         transform: translate(-50%, 50%);
         transition: all .3s ease-in-out;
@@ -45,7 +45,7 @@ export const ItemCounterMinor = styled(TiMinus)`
 
         &:hover {
         transition: all .3s ease-in-out;
-        background: linear-gradient(transparent, #006C70);
+        background: linear-gradient(transparent,#006C70);
         border-radius: 50%;
         color: #E6F3FF;
     }
@@ -55,7 +55,7 @@ export const UnitsOf = styled.span`
     display: flex;
     width: 3rem;
     font-size: 1.6rem;
-    color: #006C70;
+    color:#006C70;
     margin: 0.3rem;
     justify-content: center;
     align-items: center;
@@ -64,7 +64,7 @@ export const UnitsOf = styled.span`
 
 export const ItemCounterPlus = styled(TiPlus)`
     display: block;
-    color: #006C70;
+    color:#006C70;
     margin-left: 2rem;
     z-index: 500;
     transform: translate(-50%, 50%);
@@ -74,7 +74,7 @@ export const ItemCounterPlus = styled(TiPlus)`
 
     &:hover {
         transition: all .3s ease-in-out;
-        background: linear-gradient(transparent, #006C70);
+        background: linear-gradient(transparent,#006C70);
         border-radius: 50%;
         color: #E6F3FF
     }
@@ -83,7 +83,7 @@ export const ItemCounterPlus = styled(TiPlus)`
 export const ItemAddCart = styled.button`
     height: 3rem;
     margin: 1rem;
-    color: #006C70;
+    color:#006C70;
     background: #E6F3FF;
     border-radius: .3rem;
     cursor: pointer;
@@ -91,7 +91,7 @@ export const ItemAddCart = styled.button`
 
     &:hover {
         transition: all .3s ease-out;
-        background: linear-gradient(#E6F3FF, transparent, #006C70);
+        background: linear-gradient(#E6F3FF, transparent,#006C70);
         color: #E6F3FF
 }
 `

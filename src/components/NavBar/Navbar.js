@@ -3,28 +3,31 @@ import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, LogoContainer} from '.
 import { ReactComponent as Logo } from "../../images/bike.svg";
 import CartWidget from "../CartWidget/CartWidget";
 
-
 const Navbar = () => {
+    const categories = [
+        { name:"Vestimenta", route: "categories/clothing", id: 1},
+        { name:"Seguridad", route: "categories/safety", id: 2 }, 
+        { name:"Accesorios", route: "categories/equipment", id: 3 },
+        { name:"Repuestos", route: "categories/spareParts", id: 4 }
+    ] 
+
 return (
-    <>
         <Nav>
             <NavLink to="/">
-            <LogoContainer><Logo /></LogoContainer>
+            <LogoContainer><Logo/></LogoContainer>
             <Bars />
             </NavLink>    
             <NavMenu>
-                <NavLink to="/tienda">Tienda</NavLink>
-                <NavLink to="/vestimenta">Vestimenta</NavLink>
-                <NavLink to="/calzado">Calzado</NavLink>
-                <NavLink to="/seguridad">Seguridad</NavLink>
-                <NavLink to="/accesorios">Accesorios</NavLink>
-                <NavLink to="/outdoors">Outdoors</NavLink>
-                <NavLink to="/buscador">🔍️</NavLink>
+                {categories.map((element) => {
+                    return (
+                        <NavLink key={element.id} to={element.route}>{element.name}</NavLink>
+                    )
+                })}
+            </NavMenu>    
                 <NavBtn><NavBtnLink to="/ingreso">Entrar</NavBtnLink></NavBtn>
-                <NavLink to="/carrito"><CartWidget/></NavLink>
-            </NavMenu>
+                <NavLink to="/cart"><CartWidget/></NavLink>
+            
         </Nav>  
-    </>
 );
 };
 

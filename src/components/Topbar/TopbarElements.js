@@ -8,7 +8,7 @@ export const TopbarContainer = styled.aside`
     z-index: 1000;
     width: 100%;
     height: 100%;
-    background: #006C70;
+    background:#006C70;
     display: grid;
     align-items: center;
     top: 0;
@@ -77,7 +77,7 @@ export const TopbarRoute = styled(LinkR)`
     background: #FFD300;
     white-space: nowrap;
     padding: 1rem 2rem;
-    color: #006C70;
+    color:#006C70;
     font-size: 1rem;
     outline: none;
     border: none;
@@ -87,7 +87,7 @@ export const TopbarRoute = styled(LinkR)`
 
     &:hover {
         transition: all 0.3s ease-in-out;
-        background: #006C70;
+        background:#006C70;
         color: #FFD300;
     }
 `;

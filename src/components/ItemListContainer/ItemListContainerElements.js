@@ -8,7 +8,7 @@ export const Greetings = styled.h1`
     animation: color-change 9s infinite;
 
     @keyframes color-change {
-        0% { color: #006C70; }
+        0% { color:#006C70; }
         50% { color: #22BFBF; }
-        100% { color: #006C70; }
+        100% { color:#006C70; }
 `;

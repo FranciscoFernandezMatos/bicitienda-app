@@ -14,7 +14,7 @@ export const CartWidget = styled(FaCartPlus)`
     
         &:hover {
         transition: all 0.33s ease-in-out;
-        background:  #006C70;
+        background:#006C70;
         color: #FFD300;
     }
 `;

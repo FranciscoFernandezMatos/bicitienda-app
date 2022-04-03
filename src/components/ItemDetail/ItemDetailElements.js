@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
+export const Loading = styled.p`
+    color: white;
+`;
+
 export const ItemWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 1rem auto;
     padding: .3rem;
+    color: black;
     align-items: center;
     width: 360px;
     height: auto;
@@ -17,11 +22,11 @@ export const Img = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 220px;
     height: auto;
 `;
 
-export const Title = styled.h5`
+export const Title = styled.h6`
     margin: .5rem;
     padding: .5rem;
     display: flex;
@@ -33,12 +38,18 @@ export const Price = styled.h3`
     align-items: center;
 `;
 
+export const Description = styled.p`
+    margin: .5rem;
+    align-items: center;
+    width: 400px;
+`;
+
 export const Button = styled.button`
     border-radius: .1rem;
     background: #22BFBF;
-    padding: .1rem;
-    color: #E6F3FF;
-    border: thin solid #E6F3FF;
+    padding: .5rem;
+    color: white;
+    border: thin solid #006C70;
     outline: none;
     cursor: pointer;
     transition: all 0.33s ease-in-out;
