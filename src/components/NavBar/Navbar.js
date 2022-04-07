@@ -1,34 +1,35 @@
-import React from 'react';
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, LogoContainer} from './NavBarElements';
-import { ReactComponent as Logo } from "../../images/bike.svg";
-import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/NavBar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import ShoppingCart from "./CartWidget";
+import logo from "../../images/logo.png"
+import "./NavBar.css";
 
-const Navbar = () => {
-    const categories = [
-        { name:"Vestimenta", route: "categories/clothing", id: 1},
-        { name:"Seguridad", route: "categories/safety", id: 2 }, 
-        { name:"Accesorios", route: "categories/equipment", id: 3 },
-        { name:"Repuestos", route: "categories/spareParts", id: 4 }
-    ] 
+const NavBar = () => {
+    return(
+        <Navbar className="nav-container sticky-top" bg="dark" expand="lg" variant="dark">
+            <Container>
+                <Navbar.Brand><Link to="/" className="link"><img src={logo} className="logo img-fluid" alt="logo"/></Link></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse className="nav" id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/" className="link">Inicio</Nav.Link>
+                        <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                            <NavDropdown.Item><Link to="/categorias/vestimenta" className="link">Vestimenta</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/categorias/seguridad" className="link">Seguridad</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/categorias/accesorios" className="link">Accesorios</Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/categorias/repuestos" className="link">Repuestos</Link></NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item><Link to="/" className="link">Todos</Link></NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link as={Link} to="/carrito" className="link"><ShoppingCart /></Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    )
+}
 
-return (
-        <Nav>
-            <NavLink to="/">
-            <LogoContainer><Logo/></LogoContainer>
-            <Bars />
-            </NavLink>    
-            <NavMenu>
-                {categories.map((element) => {
-                    return (
-                        <NavLink key={element.id} to={element.route}>{element.name}</NavLink>
-                    )
-                })}
-            </NavMenu>    
-                <NavBtn><NavBtnLink to="/ingreso">Entrar</NavBtnLink></NavBtn>
-                <NavLink to="/cart"><CartWidget/></NavLink>
-            
-        </Nav>  
-);
-};
-
-export default Navbar;
+export default NavBar;

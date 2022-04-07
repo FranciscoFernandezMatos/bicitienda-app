@@ -1,0 +1,33 @@
+.container-fluid {
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.list-container {
+    background-color: #faf8f8;
+    padding-bottom: 70px;
+}
+
+.spinner-container {
+    height: 100vh;
+    position: relative;
+}
+
+.spinner-div {
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.div-container {
+    max-width: 100%;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.5rem
+}

@@ -1,0 +1,82 @@
+.detail-container {
+    padding: 70px;
+    font-family: Poppins;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #7f7f7f;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #5f5f5f;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #6f6f6f;
+    margin-bottom: 20px;
+}
+
+.cash-price{
+    color: green;
+}
+
+.btn-addToCart {
+    text-align: center;
+    margin-top: 14px;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0px;
+    color: #9b9d97;
+    width: 32%;
+    padding: 8px;
+}
+
+.btn-addToCart:hover {
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+}
+
+@media only screen and (max-width: 768px) {
+    .detail-container{
+        padding: 20px;
+    }
+    .img-container {
+        width: 80%;
+        position: relative;
+        left: 30px;
+    }
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .btn-addToCart {
+        font-size: 16px;
+        width: 50%;
+    }
+}

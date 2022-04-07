@@ -1,0 +1,48 @@
+.counter {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn-count {
+    margin-right: 12px;
+    color: #212529;
+    border-color: #212529 !important;
+}
+
+.btn-count:hover {
+    background-color: #212529 !important;
+}
+
+.quantity-container {
+	border: solid 1px #d4d2d2;
+	width: 32%;
+	height: 36px;
+	margin-top: 10px;
+}
+
+.subtract-container {
+    padding-right: 60px;
+    cursor: pointer;
+}
+
+.subtract-container:hover {
+    font-weight: 500;
+}
+
+.add-container {
+    padding-left: 60px;
+    cursor: pointer;
+}
+.add-container:hover {
+    font-weight: 500;
+}
+
+.quantity {
+    position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+    .quantity-container {
+        width: 50%;
+    }
+}

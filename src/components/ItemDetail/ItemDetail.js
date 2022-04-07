@@ -1,15 +1,37 @@
-import React from 'react';
-import {ItemWrap, Img, Title, Price, Description, Button} from './ItemDetailElements';
+import ItemCount from "../ItemCount/ItemCount.js";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import "./ItemDetail.css";
 
-export const ItemDetail = ( {pictureUrl,title,price,description}) => {
-        
-        return (
-                <ItemWrap>
-                        <Img><img width={100} src={pictureUrl} alt={title} /></Img>
-                        <Title>Pedales Mtb Shimano M520 Spd C/ Calas</Title>
-                        <Price>${price}</Price>
-                        <Description>{description}</Description>
-                        <Button>Agregar</Button>
-                </ItemWrap>
-        );
-};
+const ItemDetail = ({initial, stock, product}) => {
+
+    return (
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-lg-6 col-xs-6">
+                    <div className="detail-container img-container">
+                        <img src={product.imagen} className="img-fluid" alt="producto"/> 
+                    </div>
+                </div>
+                <div className="col-lg-6 col-xs-6">
+                    <div className="detail-container">
+                        <h1>{`${product.marca} - ${product.modelo}`}</h1>
+                        <hr/>
+                        <h3>TARJETA DE CRÉDITO</h3>
+                        <h4>{`$${product.precioTarjeta}`}</h4>
+                        <h3>TRANSFERENCIA BANCARIA</h3>
+                        <h4 className="cash-price">{`$${product.precioEfectivo}`}</h4>
+                        <h2>{`${product.categoria}`}</h2>
+                        <p className="description-container">{`${product.descripcion}`}</p>
+                        <ItemCount initial={initial} stock={stock} />
+                        <Link to="/carrito"><Button className="btn-addToCart" variant="primary">Ir al carrito</Button></Link>
+                        <br/>
+                        <Link to="/"><Button className="btn-addToCart" variant="primary">Volver al inicio</Button></Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default ItemDetail;

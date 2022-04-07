@@ -1,0 +1,69 @@
+.nav-container {
+    padding: 4px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    width: 1366px;
+    margin: 0px;
+}
+
+.col-lg-12 {
+    padding: 0px;
+}
+
+.container {
+    max-width: 1366px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.me-auto {
+    margin-right: 0px !important;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand {
+    margin-right: 0px;
+    padding-left: 20px;
+}
+
+.nav-link {
+    padding-right: 30px !important;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: inherit;
+}
+
+.logo {
+    width: 25%;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-nav {
+        text-align: end !important;
+    }
+    
+    .nav-link {
+        padding-right: 10px !important;
+    }
+
+    .navbar-dark .navbar-toggler {
+        border: 0px !important;
+    }
+}

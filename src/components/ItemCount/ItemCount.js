@@ -1,32 +1,21 @@
-import React , {useState} from 'react';
-import {ItemCountContainer, ItemCardContainer, CounterContainer, ItemCounterMinor, UnitsOf, ItemCounterPlus, ItemAddCart} from './ItemCountElements';
+import { useCounter } from "../../hooks/useCounter";
+import "./ItemCount.css";
+import Button from "react-bootstrap/Button";
 
-export const ItemCount = ({stock, initial, onAdd}) => {
-
-    const [contador, setContador] = useState(initial);
-
-    const handlerClickAdd = () => {
-        if(contador < stock) setContador (contador + 1);
-    };
-
-    const handlerClickSubstract = () => {
-        if(contador > 0) setContador( contador - 1);
-    }
-
-    const handlerAddToCart = () => {
-        onAdd (contador);
-    }
+const ItemCount = ( {initial, stock, onAdd} ) => {
+    const {counter, increment, decrement} = useCounter (initial, stock)
 
     return (
-        <ItemCountContainer>
-            <ItemCardContainer>
-                <CounterContainer>
-                    <ItemCounterMinor onClick={handlerClickSubstract}/>
-                    <UnitsOf>{contador}</UnitsOf>
-                    <ItemCounterPlus onClick={handlerClickAdd}/>
-                </CounterContainer>
-            </ItemCardContainer>
-            <ItemAddCart  onClick={handlerAddToCart}>Agregar al Carrito</ItemAddCart>
-        </ItemCountContainer>
+        <div>
+            <h1 className="counter">Cantidad</h1>
+            <div className="quantity-container d-flex justify-content-center align-items-center">
+                <div className="subtract-container" onClick={decrement}>-</div>
+                <div className="quantity">{counter}</div>
+                <div className="add-container" onClick={increment}>+</div>
+            </div>
+            <Button className="btn-addToCart" variant="primary" onClick={()=> onAdd(counter)}>Agregar al carrito</Button>
+        </div>
     )
-};
+}
+
+export default ItemCount
