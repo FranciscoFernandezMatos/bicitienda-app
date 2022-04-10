@@ -6,11 +6,24 @@
 .btn-count {
     margin-right: 12px;
     color: #212529;
-    border-color: #212529 !important;
+    border-color: #212529;
 }
 
 .btn-count:hover {
-    background-color: #212529 !important;
+    background-color: #212529;
+}
+
+.btn-addToCart {
+    text-align: center;
+    margin-top: 14px;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-addToCart:hover {
+    background-color: #fff;
+    color: #212529;
+    border-color: #212529;
 }
 
 .quantity-container {

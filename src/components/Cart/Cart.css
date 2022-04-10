@@ -1,0 +1,8 @@
+.cart-container {
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    border: thin solid black;
+}

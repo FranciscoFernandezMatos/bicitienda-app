@@ -1,9 +1,19 @@
 import ItemCount from "../ItemCount/ItemCount.js";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import {useState} from "react";
 import "./ItemDetail.css";
+import Button from "react-bootstrap/Button";
+
 
 const ItemDetail = ({initial, stock, product}) => {
+
+    const [goCart, setGoCart] = useState(false);
+
+    const onAdd = (quantity) => {
+        // Aquí guardamos la cantidad elegida temporalmente
+        console.log(quantity);
+        setGoCart (true)
+    }
 
     return (
         <div className="container-fluid">
@@ -23,11 +33,11 @@ const ItemDetail = ({initial, stock, product}) => {
                         <h4 className="cash-price">{`$${product.precioEfectivo}`}</h4>
                         <h2>{`${product.categoria}`}</h2>
                         <p className="description-container">{`${product.descripcion}`}</p>
-                        <ItemCount initial={initial} stock={stock} />
-                        <Link to="/carrito"><Button className="btn-addToCart" variant="primary">Ir al carrito</Button></Link>
-                        <br/>
-                        <Link to="/"><Button className="btn-addToCart" variant="primary">Volver al inicio</Button></Link>
-                    </div>
+                        {!goCart ? 
+                            <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
+                            :
+                            <Link to="/cart"><Button className="btn-addToCart" variant="primary">Terminar Mi Compra</Button></Link>}
+                        </div>
                 </div>
             </div>
         </div>

@@ -3,8 +3,8 @@ import Navbar from "react-bootstrap/NavBar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import ShoppingCart from "./CartWidget";
-import logo from "../../images/logo.png"
+import CartWidget from "./CartWidget";
+import logo from "../../images/logo.png";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -24,7 +24,7 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/" className="link">Todos</Link></NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to="/carrito" className="link"><ShoppingCart /></Nav.Link>
+                        <Nav.Link as={Link} to="/cart" className="link"><CartWidget /></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
