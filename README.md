@@ -2,8 +2,8 @@ E-commerce. Tienda virtual online de venta de productos accesorios para el cicli
 Proyecto Práctico Curso React CoderHouse Mar. 2022
 
 
-8. Eventos
+9. Context
 
-Desafío: Sincronizar counter
+Desafío: Crear Cart Context
 
 # bicitienda-app.github.io
