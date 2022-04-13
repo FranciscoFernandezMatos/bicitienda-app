@@ -46,3 +46,20 @@ h5 {
 .item-hr {
     margin-bottom: 20px;
 }
+
+.btn-detail {
+    margin-top: 8px;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0px;
+    color: #9b9d97;
+}
+
+.btn-detail:hover {
+    background-color: #fff;
+    color: #212529;
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+}
+

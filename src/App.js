@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartContextProvider from "./context/CartContext"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js";
@@ -7,34 +8,36 @@ import Cart from "./components/Cart/Cart.js"
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className="App">
-      <NavBar/>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
-          />
-          <Route
-            exact
-            path="/categorias/:route"
-            element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
-          />          
-          <Route
-            exact
-            path="/detalle/:idProduct"
-            element={<ItemDetailContainer/>}
-          />
-          <Route
-            exact
-            path="/cart"
-            element={<Cart/>}
-          />  
-        </Routes>
-    </div>
-  </BrowserRouter>
-);
+    <CartContextProvider>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar/>
+          <Routes>
+            <Route
+              exact
+                path="/"
+              element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
+            />
+            <Route
+              exact
+                path="/categorias/:route"
+              element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
+            />          
+            <Route
+              exact
+              path="/detalle/:idProduct"
+              element={<ItemDetailContainer/>}
+            />
+            <Route
+              exact
+              path="/cart"
+              element={<Cart/>}
+            />  
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartContextProvider>
+  );
 }
 
 export default App;

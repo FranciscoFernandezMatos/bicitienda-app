@@ -3,18 +3,22 @@ import { Link } from "react-router-dom";
 import {useState} from "react";
 import "./ItemDetail.css";
 import Button from "react-bootstrap/Button";
+import {useCartContext} from "../../context/CartContext"
 
 
 const ItemDetail = ({initial, stock, product}) => {
 
     const [goCart, setGoCart] = useState(false);
 
+    const {cartList, addToCart} = useCartContext()
+
     const onAdd = (quantity) => {
-        // Aquí guardamos la cantidad elegida temporalmente
         console.log(quantity);
         setGoCart (true)
+        addToCart ({...product, quantity: quantity})
     }
-
+    
+    console.log (cartList);
     return (
         <div className="container-fluid">
             <div className="row">
