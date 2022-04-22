@@ -16,7 +16,7 @@ function Item({prod}) {
                             <Button className="btn-detail" variant="dark">Ver Detalle</Button>
                         </Link>
                         <div className="stock-container">
-                            <h5>Stock Disponible: {prod.stock}</h5>
+                            <h5>Stock disponible: {prod.stock}</h5>
                         </div>
                     </Card.Body>
             </Card>

@@ -62,7 +62,7 @@ const Cart = () => {
                     </div>
                     <div className="row">
                         <h2 className="titulo-total text-center">
-                            TOTAL DEL CARRITO
+                            Hasta el momento en su carrito...
                         </h2>
                         <div className="col-lg-12 col-xs-12 d-flex justify-content-center">
                             <Table className="table-total">
@@ -70,11 +70,11 @@ const Cart = () => {
                                     <tr>
                                         <th>Envío</th>
                                         <td>
-                                            <span>Envío Gratuito</span>
+                                            <span>Gratuito</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Impuesto</th>
+                                        <th>Impuestos</th>
                                         <td>
                                             <span>$0</span>
                                         </td>

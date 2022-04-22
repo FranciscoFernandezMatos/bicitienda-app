@@ -20,24 +20,20 @@ function CartContextProvider({children}) {
     }
 
     function addQuantity(product) {
-        let productExist = cartList.find((item) => item.id === product.id);
-        setCartList (
-            cartList.map((item) => item.id === product.id 
-                ? {...productExist, quantity: productExist.quantity + 1}
-                : item
-            )
-        );
+        let index = cartList.findIndex(i => i.id === product.id);
+        if (index > -1 && product.quantity < product.stock) {
+            const oldItem = cartList[index].quantity
+            cartList.splice(index, 1)
+            setCartList([...cartList, { ...product, quantity: oldItem + 1 }])
+        }
     }
 
     function subtractQuantity(product) {
-        let productExist = cartList.find((item) => item.id === product.id);
-        if (productExist.quantity > 1) {
-            setCartList (
-                cartList.map((item) => item.id === product.id 
-                    ? {...productExist, quantity: productExist.quantity - 1}
-                    : item
-                    )
-                );
+        let index = cartList.findIndex(i => i.id === product.id);
+        if (index > -1 && product.quantity > 1) {
+            const oldItem = cartList[index].quantity
+            cartList.splice(index, 1)
+            setCartList([...cartList, { ...product, quantity: oldItem - 1 }])
             }
         }
 

@@ -1,7 +1,8 @@
 .arrow-container {
     display: inline-block;
     font-size: 18px;
-    font-weight: 200;
+    position: absolute;
+    left: 20px;
 }
 
 .btn-back {
@@ -49,19 +50,18 @@
 .btn-endPurchase {
     margin-bottom: 30px;
     background-color: #212529;
-    border-color: #212529;
+    border: 1px solid #212529;
     border-radius: 0px;
     color: #9b9d97;
     font-size: 18px;
-    font-weight: 400;
     padding: 8px;
     width: 32%;
     transition: all 0,6s ease;
 }
 .btn-endPurchase:hover {
-    background-color: #212529;
-    color: #fff;
-    border-color: #212529;
+    background-color: #9b9d97;
+    border: 1px solid #9b9d97;
+    color: #212529;
 }
 
 .cant-container {
@@ -85,6 +85,7 @@
 .down {
     display: block;
     cursor: pointer;
+    padding-top: 1px;
 }
 
 .empty-icon {
@@ -210,7 +211,11 @@ td {
     left: 75px;
 }
 
+.titulo-total {
+    padding: 16px !important;
+}
 .up {
     display: block;
     cursor: pointer;
+    padding-bottom: 1px;
 }

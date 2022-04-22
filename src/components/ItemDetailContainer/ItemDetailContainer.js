@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom"
 import {Spinner} from "react-bootstrap"
 import ItemDetail from "../ItemDetail/ItemDetail.js";
 import "./ItemDetailContainer.css"
-import { ProductsArray } from "../../mock/ProductsArray.js";
+import { doc, getDoc } from "firebase/firestore"
+import {db} from "../../firebase/firebase"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState ({});
@@ -12,13 +13,13 @@ const ItemDetailContainer = () => {
     
     const {idProduct} = useParams();
 
-
 useEffect(() => {
-    ProductsArray
-        .then((resp)=> setProduct(resp.find(prod => prod.id === parseInt(idProduct))))
+    const queryDataBase = doc(db, "ItemCollection", idProduct)
+    getDoc(queryDataBase)
+        .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
         .catch((err)=> console.log (err))
         .finally(()=> setLoading(false)) 
-    }, []) 
+    }, [idProduct]) 
 
     return (
         <div className="container-fluid item-container">
