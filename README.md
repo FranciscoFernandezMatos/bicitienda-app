@@ -2,8 +2,8 @@ E-commerce. Tienda virtual online de venta de productos accesorios para el cicli
 Proyecto Práctico Curso React CoderHouse Mar. 2022
 
 
-10. Técnicas de rendering
+11. Utilizando Firebase
 
-Desafío: Cart View
+Desafío: Item Collection
 
 # bicitienda-app.github.io
