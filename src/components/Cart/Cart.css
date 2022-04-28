@@ -1,13 +1,13 @@
 .arrow-container {
     display: inline-block;
-    font-size: 18px;
+    font-size: 1rem;
     position: absolute;
     left: 20px;
 }
 
 .btn-back {
     text-align: center;
-    margin-top: 14px;
+    margin-top: 1rem;
     transition: all 0,6s ease;
     background-color: #212529;
     border-color: #212529;

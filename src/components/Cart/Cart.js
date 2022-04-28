@@ -30,7 +30,7 @@ const Cart = () => {
                                 </thead>
                                 <tbody>
                                     {cartList.map(prod=>                
-                                        <tr>
+                                        <tr key={prod.id}>
                                             <td className="td-cart"><FontAwesomeIcon icon={faTrash} className="empty-icon" onClick={()=> {removeFromCart(prod.id)}}/></td>
                                             <td className="td-img"><Link to={`/detalle/${prod.id}`}><Card.Img variant="top" src={prod.imagen}/></Link></td>
                                             <td className="td-prod">{prod.marca} {prod.modelo}</td>
@@ -91,7 +91,9 @@ const Cart = () => {
                     </div>  
                     <div className="row">
                         <div className="col-lg-12 col-xs-12 text-center">
-                            <button className="btn-endPurchase">Finalizar Compra</button>
+                            <Link to="/checkout">
+                                <Button className="btn-finalizarCompra">Finalizar Compra</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

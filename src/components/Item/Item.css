@@ -16,6 +16,7 @@
 .card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 400ms ease;
@@ -30,7 +31,7 @@
 }
 
 .card-img {
-    padding-top: 20px;
+    padding-top: 2rem;
     max-width: 80%;
 }
 

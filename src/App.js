@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js";
-import Cart from "./components/Cart/Cart.js"
+import Cart from "./components/Cart/Cart.js";
+import Checkout from "./components/Checkout/Checkout.js";
 
 function App() {
   return (
@@ -32,7 +33,12 @@ function App() {
               exact
               path="/cart"
               element={<Cart/>}
-            />  
+            /> 
+            <Route
+              exact
+              path="/checkout"
+              element={<Checkout/>}
+            />
           </Routes>
         </div>
       </BrowserRouter>

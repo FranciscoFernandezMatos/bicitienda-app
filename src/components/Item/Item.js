@@ -7,7 +7,9 @@ function Item({prod}) {
     return (
         <div key={prod.id} className="card-container col-lg-3 col-xs-6">
             <Card className="card" style={{ width: '18rem' }}>
-                    <Link to={`/detalle/${prod.id}`}><Card.Img variant="top" src={prod.imagen} className="card-img" /></Link>
+                    <Link to={`/detalle/${prod.id}`} className="card-img"> 
+                        <Card.Img variant="top" src={prod.imagen} />
+                    </Link>
                     <Card.Body>
                         <Card.Title>{`${prod.marca} - ${prod.modelo}`}</Card.Title>
                         <hr className="item-hr"/>
