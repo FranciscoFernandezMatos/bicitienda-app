@@ -33,8 +33,8 @@ Librerías:
 Este proyecto se inició con Create React App:
 
 ```sh
-npx create-react-app proyecto-ecommerce
-cd proyecto-ecommerce
+npx create-react-app bicitienda-app
+cd bicitienda-app
 npm install
 ```
 
