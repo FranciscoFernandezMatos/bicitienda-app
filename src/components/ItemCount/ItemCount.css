@@ -1,5 +1,5 @@
 .add-container {
-    padding-left: 60px;
+    padding-left: 4rem;
     cursor: pointer;
 }
 .add-container:hover {
@@ -7,33 +7,17 @@
 }
 
 .btn-count {
-    margin-right: 12px;
-    color: #212529;
-    border-color: #212529;
+    margin-right: 1rem;
+    color: #0C1014;
+    border-color: #0C1014;
 }
 .btn-count:hover {
-    background-color: #212529;
-}
-
-.btn-addToCart {
-    text-align: center;
-    margin-top: 14px;
-    background-color: #212529;
-    border-color: #212529;
-    border-radius: 0px;
-    color: #9b9d97;
-    width: 32%;
-    padding: 8px;
-}
-.btn-addToCart:hover {
-    background-color: #fff;
-    color: #212529;
-    border-color: #212529;
+    background-color: #0C1014;
 }
 
 .counter {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .quantity {
@@ -41,14 +25,14 @@
 }
 
 .quantity-container {
-	border: solid 1px #d4d2d2;
+	border: 1px solid #d4d2d2;
 	width: 32%;
-	height: 36px;
-	margin-top: 10px;
+	height: 2rem;
+	margin-top: 1rem;
 }
 
 .subtract-container {
-    padding-right: 60px;
+    padding-right: 4rem;
     cursor: pointer;
 }
 .subtract-container:hover {

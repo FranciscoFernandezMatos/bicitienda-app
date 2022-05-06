@@ -1,134 +1,119 @@
-.arrow-container {
-    display: inline-block;
-    font-size: 1rem;
-    position: absolute;
-    left: 20px;
-}
-
 .btn-back {
-    text-align: center;
-    margin-top: 1rem;
-    transition: all 0,6s ease;
-    background-color: #212529;
-    border-color: #212529;
-    border-radius: 0px;
-    color: #9b9d97;
-    font-size: 18px;
-    font-weight: 400;
-    padding: 8px;
     width: 15%;
+    color: #9b9d97;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    padding: .5rem;
+    text-align: center;
+    background-color: #0C1014;
+    border-color: #0C1014;
+    border-radius: 0px;
+    transition: all 0,6s ease;
 }
 .btn-back:hover {
     background-color: #9b9d97;
-    color: #212529;
+    color: #0C1014;
     border-color: #9b9d97;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;                                                                                                
+}
+
+.btnGo-container {
+    text-align: end;
+}
+
+.btnEmpty-container {
+    text-align: start;
+}
+
+
 .btn-emptyCart {
-    color: #212529;
-    text-align: center;
-    margin-top: 14px;
-    transition: all 0,6s ease;
-    background-color: #fff;
-    border-color: #6f6f6f;
-    border-radius: 0px;
-    border-width: 1px;
-    padding: 8px;
-    position: relative;
-    left: 20px;
-    width: 186px;
-    margin-top: 40px;
-    font-size: 18px;
+    color: #0C1014;
+    font-size: 1rem;
     font-weight: 400;
+    position: relative;
+    left: 1rem;
+    width: 10rem;
+    padding: .5rem;
+    border: 1px solid #6f6f6f;
+    background-color: #fff;
+    transition: all 0,6s ease;
 }
 .btn-emptyCart:hover {
-    background-color: #212529;
+    background-color: #0C1014;
     color: #9b9d97;
-    border-color: #212529;
+    border-color: #0C1014;
 }
 
 .btn-endPurchase {
     margin-bottom: 30px;
-    background-color: #212529;
-    border: 1px solid #212529;
+    background-color: #0C1014;
+    border: 1px solid #0C1014;
     border-radius: 0px;
     color: #9b9d97;
-    font-size: 18px;
-    padding: 8px;
-    width: 32%;
+    font-size: 1rem;
+    padding: .5rem;
+    width: 30%;
     transition: all 0,6s ease;
 }
 .btn-endPurchase:hover {
     background-color: #9b9d97;
     border: 1px solid #9b9d97;
-    color: #212529;
-}
-
-.cant-container {
-    display: inline;
-    margin-right: 10px;
+    color: #0C1014;
 }
 
 .caption-total{
-    margin-top: 60px;
+    margin-top: 4rem;
     font-family: Poppins;
 }
 
 .cart-container{
     overflow-x: hidden;
+    padding-bottom: 5rem;
 }
 
 .cart-text {
-    margin-top: 100px;
+    margin-top: 6rem;
 }
 
-.down {
-    display: block;
-    cursor: pointer;
-    padding-top: 1px;
+.empty-cart {
+    padding-bottom: 19rem;
 }
 
-.empty-icon {
-    cursor: pointer;
-}
-.empty-icon:hover {
-    font-size: 18px;
+.btn-goShopping {
     color: #9b9d97;
-}
-
-.goShopping-btn {
-    color: #9b9d97;
-    text-align: center;
-    margin-top: 14px;
     transition: all 0,6s ease;
-    background-color: #212529;
-    border-color: #212529;
-    border-radius: 0px;
-    border-width: 1px;
+    background-color: #0C1014;
+    border: 1px solid #0C1014;
     position: relative;
-    right: 20px;
-    padding: 8px;
-    width: 186px;
-    margin-top: 40px;
-    font-size: 18px;
+    right: 2rem;
+    padding: .5rem;
+    width: 11rem;
+    margin-top: 2rem;
+    font-size: 1rem;
     font-weight: 400;
 }
-.goShopping-btn:hover {
-    background-color: #212529;
+.btn-goShopping:hover {
+    background-color: #0C1014;
     color: #fff;
-    border-color: #212529;
+    border-color: #0C1014;
 }
 
 .hr-cart {
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-top: 3rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }
 
 .table {
     width: 80%;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     --bs-table-striped-bg: rgba(0, 0, 0, 0.0);
     vertical-align: baseline !important;
@@ -137,85 +122,61 @@
 }
 
 .table-total {
-    width: 32%;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    width: 30%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     border: 1px solid #dee2e6 !important;
     font-family: Poppins;
 }
 
-thead {
-    color: #9b9d97;
-    font-weight: 400;
-    font-size: 16px;
-    background-color: #212529 !important;
+.title-cart {
+    font-family: Poppins;
+    color: #0C1014;
+    font-size: 32px;
+    margin-top: 60px;
 }
 
-th {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-}
 
-.th-cart {
-    width: 8%;
-    border-right: none !important;
-}
+@media only screen and (max-width: 768px){
+    .btn-emptyCart{
+        font-size: 1rem;
+        width: 10rem !important;
+        margin-top: 1rem;
+    }
 
-.th-img {
-    width: 8%;
-    border-right: none;
-    border-left: none;
-}
+    .btn-goShopping {
+        width: 10rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
 
-.th-prod {
-    border-left: none;
-    text-align: left;
-    padding-left: 30px !important;
-}
+    .btn-endPurchase {
+        font-size: 1rem;
+        width: 70%;
+    }
 
-td {
-    padding-bottom: 15px !important; 
-    padding-top: 15px !important;
-}
+    .title-cart {
+        font-size: 28px;
+    }
 
-.td-cart {
-    border-right: none;
-    padding-right: 20px !important;
-    padding-left: 0px !important;
-    font-size: 16px;
-}
+    .btnSeguir-container {
+        width: 50%;
+        position: relative;
+        left: 25px;
+    }
 
-.td-img {
-    width: 10%;
-    border-right: none;
-    border-left: none;
-}
+    .btnVaciar-container {
+        width: 50%;
+        position: relative;
+        right: 25px;
+    }
 
-.td-prod {
-    border-left: none;
-    text-align: left;
-    padding-left: 30px !important;
-    color: #3f3f3f !important;
-    font-weight: 700;
-}
+    .texto-carrito {
+        font-size: 20px;
+    }
 
-.td-price{
-    color: #6f6f6f !important;
-    font-weight: 600;
-}
+    .btn-volver {
+        width: 35%;
+    }
 
-.td-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: 75px;
-}
-
-.titulo-total {
-    padding: 16px !important;
-}
-.up {
-    display: block;
-    cursor: pointer;
-    padding-bottom: 1px;
 }

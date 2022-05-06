@@ -24,7 +24,7 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item><Link to="/" className="link">Todos</Link></NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to="/cart" className="link"><CartWidget /></Nav.Link>
+                        <Nav.Link as={Link} to="/cart" className="link"><CartWidget/></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

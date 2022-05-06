@@ -1,94 +1,44 @@
-import "./Checkout.css";
-import {useState} from "react";
 import {useCartContext} from "../../context/CartContext";
-import validate from "../../helpers/validate";
 import { Navigate } from 'react-router';
-import { query, where, documentId, collection, getDocs, Timestamp, writeBatch, addDoc } from  "firebase/firestore";
-import { db } from "../../firebase/firebase";
-import Swal from 'sweetalert2';
-import Form from "../Form/Form";
+import { Formik } from "formik";
+import { generateOrder } from "../../config/generateOrder.js";
+import * as Yup from "yup";
+import "./Checkout.css";
+
+const schema = Yup.object().shape({
+    name: Yup.string()
+            .required("Este campo es obligatorio")
+            .min(3, "Nombre inválido")
+            .max(30, "Nombre inválido"),
+    lastName: Yup.string()
+            .required("Este campo es obligatorio")
+            .min(3, "Nombre inválido")
+            .max(30, "Nombre inválido"),
+    phone: Yup.string()
+            .required("Este campo es obligatorio")
+            .min(8, "Teléfono inválido"),           
+    email: Yup.string()
+            .required("Este campo es obligatorio")
+            .email("Email inválido")
+            .oneOf([Yup.ref("emailConfirm")], "Los emails no coinciden"),
+    emailConfirm: Yup.string()
+            .required("Este campo es obligatorio")
+            .email("Email inválido") 
+            .oneOf([Yup.ref("email")], "Los emails no coinciden") 
+
+})
 
 function Checkout() {
 
     const {cartList, totalPurchase, emptyCart} = useCartContext();
 
-    const [values, setValues] = useState({
-        nombre: "",
-        apellido: "",
-        telefono: "",
+    const initialValues = {
+        name: "",
+        lastName: "",
+        phone: "",
         email: "",
         emailConfirm: "",
-    });
-
-    const handleInputChange = (e) => {
-        setValues({
-            ...values,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!validate(values)) {return}
-
-        const order = {
-            buyer: {...values},
-            items: cartList.map(cartItem => {
-                const id = cartItem.id; 
-                const marca = cartItem.marca;
-                const modelo = cartItem.modelo;
-                const precio = cartItem.precioEfectivo * cartItem.quantity;
-
-                return ({id, marca, modelo, precio})
-            }),
-            total: totalPurchase(),
-            date: Timestamp.fromDate(new Date())
-        }
-
-        const batch = writeBatch(db)
-
-        const ordersCollection = collection(db, "Orders")
-        const itemsCollection = collection(db, "ItemCollection")
-        const queryStockUpdate = query(itemsCollection, where(documentId(), "in", cartList.map(el => el.id)))
-
-        const outOfStock = []
-
-        const products = await getDocs(queryStockUpdate)
-
-        products.docs.forEach((doc)=>{
-            const itemToUpdate = cartList.find(el => el.id === doc.id)
-
-            if(doc.data().stock >
-                itemToUpdate.quantity){
-                batch.update(doc.ref, {
-                    stock: doc.data().stock - itemToUpdate.quantity
-                })
-            }else {
-                outOfStock.push(itemToUpdate)
-            }
-        })
-        if (outOfStock.length === 0) {
-            addDoc(ordersCollection, order)
-                .then((res)=> {
-                    batch.commit()
-                    Swal.fire({
-                        icon:"success",
-                        title:"Su compra se ha realizado exitosamente",
-                        text: `Su número de orden es ${res.id}`,
-                        confirmButtonColor: "#212529"
-                    })
-                    emptyCart()
-                })
-        } else {
-            Swal.fire({
-                icon:"error",
-                title: "Disculpe, no hay stock de los siguientes modelos:",
-                text: outOfStock.map(el => el.modelo).join(", "),
-                confirmButtonColor: "#212529"
-            })
-        } 
-    }
+    };
 
     return (
         <>
@@ -98,13 +48,85 @@ function Checkout() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                            <h2 className="texto-resumen">Resumen de Compra</h2>
-                            <hr className="hr-resumen" />                      
+                            <h2 className="summary-text">Resumen de Compra</h2>
+                            <hr className="summary-hr" />                      
                         </div>  
                     </div>
                     <div className="row">
                         <div className="col-lg-12 col-xs-12">
-                        <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} values={values.nombre, values.apellido, values.telefono, values.email, values.emailConfirm}/>
+                        <Formik
+                            initialValues={initialValues}
+                            validationSchema={schema}
+                            onSubmit={(values)=>{
+                                generateOrder(values, cartList, totalPurchase, emptyCart)
+                            }}
+                        >
+                            {(formik) => (
+                                <form onSubmit={formik.handleSubmit}>
+                                <label className="form-caption">Nombre</label>
+                                <input 
+                                    onChange={formik.handleChange} 
+                                    name= "name"
+                                    value= {formik.values.name}
+                                    className= "form-control my-2"
+                                    type= "text"
+                                    placeholder= "Escriba su nombre"
+                                />
+                                {formik.errors.name && <small>{formik.errors.name}</small>}
+                                <br/>
+
+                                <label className="form-caption">Apellido</label>
+                                <input 
+                                    onChange={formik.handleChange} 
+                                    name= "lastName"
+                                    value= {formik.values.lastName}
+                                    className="form-control my-2"
+                                    type= "text"
+                                    placeholder= "Escriba su apellido"
+                                />
+                                {formik.errors.lastName && <small>{formik.errors.lastName}</small>}
+                                <br/>
+
+                                <label className="form-caption">Telefono</label>
+                                <input 
+                                    onChange={formik.handleChange} 
+                                    name= "phone"
+                                    value= {formik.values.phone}
+                                    className="form-control my-2"
+                                    type= "number"
+                                    placeholder= "Escriba su teléfono"
+                                />
+                                {formik.errors.phone && <small>{formik.errors.phone}</small>}
+                                <br/>
+
+                                <label className="form-caption">E-mail</label>
+                                <input 
+                                    onChange={formik.handleChange} 
+                                    name= "email"
+                                    value= {formik.values.email}
+                                    className="form-control my-2"
+                                    type= "email"
+                                    placeholder= "nombre@ejemplo.com"
+                                /> 
+                                {formik.errors.email && <small>{formik.errors.email}</small>}
+                                <br/>
+
+                                <label className="form-caption">E-mail</label>
+                                <input 
+                                    onChange={formik.handleChange} 
+                                    name= "emailConfirm"
+                                    value= {formik.values.emailConfirm}
+                                    className="form-control my-2"
+                                    type= "email"
+                                    placeholder= "Repita su e-mail"
+                                /> 
+                                {formik.errors.emailConfirm && <small>{formik.errors.emailConfirm}</small>}                               
+                                <div className="text-center">    
+                                    <button type="submit" className="btn-endPurchase">Confirmar Compra</button>    
+                                </div>                             
+                            </form>
+                            )} 
+                        </Formik>
                         </div>
                     </div>
                 </div>

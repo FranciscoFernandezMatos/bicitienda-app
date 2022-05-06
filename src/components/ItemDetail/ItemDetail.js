@@ -10,21 +10,19 @@ const ItemDetail = ({initial, stock, product}) => {
 
     const [goCart, setGoCart] = useState(false);
 
-    const {cartList, addToCart} = useCartContext()
+    const {addToCart} = useCartContext()
 
     const onAdd = (quantity) => {
-        console.log(quantity);
         setGoCart (true)
         addToCart ({...product, quantity: quantity})
     }
     
-    console.log (cartList);
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-lg-6 col-xs-6">
-                    <div className="detail-container img-container">
-                        <img src={product.imagen} className="img-fluid" alt="producto"/> 
+                <div className="col-lg-6">
+                    <div className="detail-container d-flex justify-content-end">
+                        <img src={product.imagen} className="img-fluid img-container" alt="producto"/> 
                     </div>
                 </div>
                 <div className="col-lg-6 col-xs-6">
@@ -40,8 +38,13 @@ const ItemDetail = ({initial, stock, product}) => {
                         {!goCart ? 
                             <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
                             :
-                            <Link to="/cart"><Button className="btn-addToCart" variant="primary">Terminar Mi Compra</Button></Link>}
-                        </div>
+                            <>
+                                <Link to="/cart"><Button className="btn-addToCart" variant="primary">Ir al carrito</Button></Link>
+                                <br/>
+                                <Link to="/"><Button className="btn-addToCart" variant="primary">Volver al inicio</Button></Link>
+                            </>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

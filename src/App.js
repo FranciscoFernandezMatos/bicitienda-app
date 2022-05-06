@@ -6,6 +6,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js";
 import Cart from "./components/Cart/Cart.js";
 import Checkout from "./components/Checkout/Checkout.js";
+import Top from "./components/ToTheTopButton/ToTheTopButton";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
   return (
@@ -16,12 +18,12 @@ function App() {
           <Routes>
             <Route
               exact
-                path="/"
+              path="/"
               element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
             />
             <Route
               exact
-                path="/categorias/:route"
+              path="/categorias/:route"
               element={<ItemListContainer greeting={"Bike Shop Bici Tienda - Todo para tu próxima Aventura!"}/>}
             />          
             <Route
@@ -40,6 +42,8 @@ function App() {
               element={<Checkout/>}
             />
           </Routes>
+          <Top />
+          <Footer/>
         </div>
       </BrowserRouter>
     </CartContextProvider>

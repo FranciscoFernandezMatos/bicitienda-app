@@ -1,0 +1,166 @@
+.arrow-container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    padding: .5rem;
+    margin-left: 1rem;
+}
+
+.cant-container {
+    display: inline;
+    margin-right: .5rem;
+}
+
+.cart-table {
+    width: 80%;
+    text-align: center;
+    margin-top: 6rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.0);
+    vertical-align: baseline !important;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.0);
+    font-family: Poppins;
+}
+
+.down {
+    cursor: pointer;
+    padding-top: 1px;
+} 
+
+td {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.td-cart {
+    border-right: none;
+    padding-right: 1rem !important;
+    padding-left: 0px !important;
+    font-size: 1rem;
+}
+
+.quant-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.td-img {
+    width: 10%;
+    border-right: none;
+    border-left: none;
+}
+
+.td-price{
+    color: #6f6f6f !important;
+    font-weight: 600;
+}
+
+.td-prod {
+    border-left: none;
+    text-align: left;
+    padding-left: 2rem !important;
+    color: #3f3f3f !important;
+    font-weight: 700;
+}
+
+th {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.th-delete {
+    width: 8%;
+    border-right: none !important;
+}
+
+.th-img {
+    width: 8%;
+    border-right: none;
+    border-left: none;
+}
+
+.th-prod {
+    border-left: none;
+    text-align: left;
+    padding-left: 30px !important;
+}
+
+thead {
+    color: #9b9d97;
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: #0C1014 !important;
+}
+
+.up {
+    cursor: pointer;
+    padding-bottom: 1px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .arrow-container {
+        font-size: .8rem;
+    }
+
+    .cant-container {
+        justify-content: end;
+    }
+
+    .cart-table {
+        border: 0px !important;
+        box-shadow: none;
+        border-collapse: unset;
+    }
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table tr {
+        margin-bottom: 20px;
+        display: block;
+        border: 1px solid #ddd;
+        box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-table th, .cart-table td {
+        font-size: 14px;
+    }
+
+    .cart-table td {
+        display: block;
+        border: 1px solid #ddd;
+        text-align: right;
+    }
+
+    .cart-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+        color: #6f6f6f !important;
+    }
+
+    tbody, td, th, thead, tr {
+        border-color: none;
+        border-style: none;
+        border-width: none;
+    }
+
+    .td-cant::before {
+        position: relative;
+        top: 3px !important;
+    }
+
+    .td-img {
+        display: none !important;
+    }
+
+    .td-prod {
+        padding-left: 10px !important;
+    }
+
+}
